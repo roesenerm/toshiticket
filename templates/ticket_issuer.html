@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block body %}
+<body>
+    <center>
+    <div class = "container">
+      <h1>Check Ticket Balance</h1>
+      <h3>Bitcoin Address: {{ bitcoin_address }}</h3>
+      {% for tx in utxos %}
+        {% for asset in tx.assets %}
+          <h3>Ticket ID: {{asset.assetId}}</h3>
+          <h3>Tickets Available: {{asset.amount}}</h3>
+          <br>
+        {% endfor %}
+      {% endfor %}
+      <br>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+    </div>
+    </center>
+</body>
+
+{% endblock %}

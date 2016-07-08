@@ -1,0 +1,43 @@
+{% extends "template.html" %}
+{% block body %}
+
+<body>
+	<center>
+    <div class = "container">
+    <h1>Artist Events</h1>
+    <br>
+      <div class = "row">
+      	{% for meta in meta_data %}
+      		<div class = "col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>{{ meta.ticket_name }}</h3>
+                <br>
+                <a href="/{{meta.asset_id}}"><img src= {{ meta.image }} alt="color qrcode" height="300" width="300"></a>
+                <br>
+                <br>
+                <h4>${{ meta.price }}</h4>
+                <p>Ticket Owner: {{ meta.bitcoin_address }}</p>
+                <!---
+                <form class="form-horizontal" action="" method="post">
+                    <p><input type="hidden" placeholder="Bitcoin Address" name="bitcoin_address" value={{ meta.bitcoin_address }}></p>
+                    <p><input type="hidden" placeholder="Asset ID" name="asset_id" value={{ meta.asset_id }}></p>
+                    <p><input type="hidden" placeholder="Ticket Price" name="ticket_price" value={{ meta.price }}></p>
+                    <p><input type="number" MIN="1" MAX="10" STEP="1" VALUE="1" SIZE="1" placeholder="1" name="transfer_amount" value="{{request.form.transfer_amount}}"></p>
+                    <p><input class="btn btn-custom" type="submit" value="Buy"></p>
+                </form>
+                -->
+                <p>Ticket ID: <a href="/{{meta.asset_id}}">{{ meta.asset_id }}</a></p>
+              </div>
+              {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }}</p>
+              {% endif %}
+            </div>
+          </div>
+		    {% endfor %}
+      </div>
+    </div>
+  </center>
+</body>
+
+{% endblock %}

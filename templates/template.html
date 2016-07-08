@@ -1,0 +1,73 @@
+<html>
+<link href="static/css/bootstrap.css" rel="stylesheet" media="screen">
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<head>
+</head>
+
+<body class = "body">
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ToshiTicket</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/explore">Explore</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ticketing<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/issue">Issue Ticket</a></li>
+            <li class="divider"></li>
+            <li><a href="/transfer">Transfer Ticket</a></li>
+            <li class="divider"></li>
+            <li><a href="/check_ticket_issuer">Check Ticket Issuer</a></li>
+            <li class="divider"></li>
+            <li><a href="/check_ticket">Check Ticket</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-custom">Go</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <body>
+
+        {% block body %}
+        {% endblock %}
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    </body>
+
+
+</body>
+
+<script type = "text/javascript" src = "static/js/bootstrap.min.js"></script>
+
+
+</html>

@@ -1,0 +1,60 @@
+{% extends "template.html" %}
+{% block body %}
+
+<body>
+	<div class="container">
+
+		<form class="form-horizontal" action="" method="post">
+			<fieldset>
+			<h1>Transfer Tickets</h1>
+			<div class="form-group">
+			  <label for="inputImage" class="col-lg-2 control-label">From</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="From Bitcoin Address" name="from_bitcoin_address" value="{{request.form.from_bitcoin_address}}">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="inputImage" class="col-lg-2 control-label">To</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="To Bitcoin Address" name="to_bitcoin_address" value="{{request.form.to_bitcoin_address}}">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="inputName" class="col-lg-2 control-label">Ticket ID</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="Ticket ID" name="asset_id" value="{{request.form.asset_id}}">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="inputEmail" class="col-lg-2 control-label">Transfer Amount</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="Transfer Amount" name="transfer_amount" value="{{request.form.transfer_amount}}">
+			    <span class="help-block">Number of Tickets</span>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="select" class="col-lg-2 control-label">Sign with Private Key</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="Private Key" name="private_key" value="{{request.form.private_key}}">
+			    <span class="help-block">Your Private Key will not be stored or saved</span>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <div class="col-lg-10 col-lg-offset-2">
+			    <button class="btn btn-default">Cancel</button>
+			    <button type="submit" class="btn btn-custom">Submit</button>
+			  </div>
+			</div>
+			</fieldset>
+		</form>
+		{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+		{% endif %}
+	</div>
+
+
+</body>
+
+
+
+{% endblock %}

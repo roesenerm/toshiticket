@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block body %}
+<body>
+    <!-- Custom styles for this template -->
+    <link href="static/css/signin.css" rel="stylesheet">
+    
+    <div class="container">
+      <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">Sign Up</h2>
+        <br>
+        <input type="text" class="form-control" name="username" value="{{request.form.username}}" placeholder="Email address" required autofocus>
+        <br>
+        <input type="password" class="form-control" name="brainwallet_password" value="{{request.form.brainwallet_password}}" placeholder="Brainwallet Password" required>
+        <span class="help-block">Only use very complex and unique phrases. A minimum of 12 words with special characters is recommended.</span>
+        <input type="password" class="form-control" name="confirm_brainwallet_password" value="{{request.form.confirm_brainwallet_password}}" placeholder="Confirm Brainwallet Password" required>
+        <br>
+        <button class="btn btn-lg btn-custom btn-block" type="submit">Sign Up</button>
+        <br>
+        <a href="/login">Login Here</a>
+      </form>
+    </div>
+
+  </body>
+{% endblock %}

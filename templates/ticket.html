@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block body %}
+<body>
+    <center>
+    <div class = "container">
+      <h1>Check Ticket Details</h1>
+      <h3>Ticket Owner: {{ bitcoin_address }}</h3>
+      <h3>Ticket ID: {{ asset_id }}</h3>
+      <h3>{{ ticket_name }}</h3>
+      <img src= {{ image }} alt="color qrcode" height="300" width="300">
+      <h3>Price: ${{ price }}</h3>
+      <h3>Description: {{ description }}</h3>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+    </div>
+    <form class="form-horizontal" action="" method="post">
+        <p><input type="hidden" placeholder="Bitcoin Address" name="bitcoin_address" value={{ bitcoin_address }}></p>
+        <p><input type="hidden" placeholder="Asset ID" name="asset_id" value={{ asset_id }}></p>
+        <p><input type="hidden" placeholder="Ticket Price" name="ticket_price" value={{ price }}></p>
+        <p><input type="number" MIN="1" MAX="10" STEP="1" VALUE="1" SIZE="1" placeholder="1" name="transfer_amount" value="{{request.form.transfer_amount}}"></p>
+        <p><input class="btn btn-custom" type="submit" value="Buy"></p>
+    </form>
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+    </center>
+</body>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+{% block body %}
+    <body>
+
+    	<div class="container">
+    		<h1>Purchase Confirmed</h1>
+    		<br>
+        	<p>Asset Transaction ID: {{asset_tx_id}}</p>
+            <p>BitcoinTransaction ID: {{btc_tx_id}}</p>
+
+    	</div>
+
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+    </body>
+
+{% endblock %}

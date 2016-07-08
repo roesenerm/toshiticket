@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block body %}
+    <body>
+
+    	<div class="container">
+    		<h1>Issuance</h1>
+    		<br>
+        	<p>Name: {{ticket_name}}</p>
+            <p>Description: {{description}}</p>
+            <p>Ticket Price: {{ticket_price}}</p>
+            <p>Issued Amount: {{issued_amount}}</p>
+            <img src={{image}} alt="color qrcode">
+
+    	</div>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+
+    </body>
+
+{% endblock %}

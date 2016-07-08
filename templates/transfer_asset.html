@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block body %}
+    <body>
+
+    	<div class="container">
+    		<h1>Transfer Complete</h1>
+    		<br>
+        	<p>Transaction ID: {{tx_id}}</p>
+
+    	</div>
+    	{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+		{% endif %}
+
+    </body>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block body %}
+
+<body>
+	<div class="container">
+
+		<form class="form-horizontal" action="" method="post">
+			<fieldset>
+			<h1>Check Ticket Details</h1>
+			<div class="form-group">
+			  <label for="select" class="col-lg-2 control-label">Asset ID</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="Asset ID" name="asset_id" value="{{request.form.asset_id}}">
+			    <span class="help-block">The issuing asset ID of ticket.</span>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="select" class="col-lg-2 control-label">Transaction ID</label>
+			  <div class="col-lg-10">
+			    <input type="text" class="form-control" placeholder="Transaction ID" name="tx_id" value="{{request.form.tx_id}}">
+			    <span class="help-block">The broadcast transaction ID.</span>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <div class="col-lg-10 col-lg-offset-2">
+			    <button class="btn btn-default">Cancel</button>
+			    <button type="submit" class="btn btn-custom">Submit</button>
+			  </div>
+			</div>
+			</fieldset>
+		</form>
+		{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+		{% endif %}
+	</div>
+
+
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+{% block body %}
+<body>
+  <center>
+    <div class = "container">
+    <h1>My Tickets</h1>
+    <br>
+      <div class = "row">
+        <h3>My Address: {{ my_address }}</h3>
+        <br>
+        {% for tx in utxos %}
+          {% for a in tx.assets %}
+          <h3>Transaction ID: {{ tx.txid }}</h3>
+          <h3>My Ticket ID: {{ a.assetId }}</h3>
+          <h3>Tickets I Own: {{ a.amount }}</h3>
+          <br>
+          {% endfor %}
+        {% endfor %}
+          <br>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </center>
+</body>
+
+{% endblock %}

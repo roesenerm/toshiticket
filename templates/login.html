@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block body %}
+
+<body>
+    <!-- Custom styles for this template -->
+    <link href="static/css/signin.css" rel="stylesheet">
+
+    <div class="container">
+      <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">Please Sign In</h2>
+        <br>
+        <input type="text" class="form-control" name="username" value="{{request.form.username}}" placeholder="Email address" required autofocus>
+        <br>
+        <input type="password" class="form-control" name="brainwallet_password" value="{{request.form.brainwallet_password}}" placeholder="Brainwallet Password" required>
+        <br>
+        <button class="btn btn-lg btn-custom btn-block" type="submit">Sign In</button>
+        <br>
+        <!---<a href="{{auth_url}}" class="btn btn-lg btn-custom btn-block">Login With Coinbase</a>-->
+        <br>
+        <a href="/signup">Sign Up Here</a>
+        <br>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+      </form>
+    </div>
+
+  </body>
+{% endblock %}
